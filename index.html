@@ -100,7 +100,11 @@
             <div class="tweetDate">
               <i class="fas fa-calendar-alt fa-sm fa-fw"></i>{{tweet.date}}
             </div>
+            <div class="tweet_remove" @click="removeTweet(index)">
+              <span class="remove">Delete this tweet <i class="fas fa-trash fa-xs fa-fw"></i></span>
           </div>
+          </div>
+          
         </section>
         <div v-else>No tweets to show</div>
       </div>

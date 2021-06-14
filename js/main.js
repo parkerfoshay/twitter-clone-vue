@@ -70,7 +70,28 @@ let methodsObject = {
 
     localStorage.setItem("simple_tweet_tweets", stringTweets);
   },
+  removeTweet(index) {
+    let removedTweets = confirm("Are you sure you want to remove this tweet?");
+
+    if (removedTweets) {
+      this.tweets.splice(index, 1);
+      localStorage.simple_tweet_tweets = JSON.stringify(this.tweets);
+    }
+  },
 };
+
+Vue.component("tweet-message", {
+  props: {
+    text: String,
+    date: String,
+  },
+  template: `
+     <div>
+         <p> {{text}} </p>
+         <p> {{date}}</p>
+     </div>
+  `,
+});
 
 var app = new Vue({
   el: "#app",
